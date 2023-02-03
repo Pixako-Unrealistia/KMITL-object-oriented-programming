@@ -1,0 +1,5 @@
+/home/pix/oop/lab02/ex02/build/CMakeFiles/runme.exe.dir
+/home/pix/oop/lab02/ex02/build/CMakeFiles/data-single_grade.dir
+/home/pix/oop/lab02/ex02/build/CMakeFiles/data-grades.dir
+/home/pix/oop/lab02/ex02/build/CMakeFiles/edit_cache.dir
+/home/pix/oop/lab02/ex02/build/CMakeFiles/rebuild_cache.dir
