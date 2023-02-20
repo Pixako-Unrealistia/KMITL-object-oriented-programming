@@ -8,5 +8,6 @@
 #include <sstream>
 #include <fstream>
 #include <filesystem>
+#include <ostream>
 
 #endif

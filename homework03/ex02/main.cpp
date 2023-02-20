@@ -66,32 +66,32 @@ std::string better_to_string(double data)
 	return ss.str();
 }
 
-std::string cartesean_product(std::vector<std::vector<double>> data)
+void recursive(std::vector<std::vector<double>> &total, std::vector<double> buffer, std::vector<std::vector<double>> data, int index)
 {
-	/* Expected output, 
-	(3.5, 4.2, 3), (3.5, 4.2, 7), (3.5, 4.2, 2),
-(3.5, 2.7, 3), (3.5, 2.7, 7), (3.5, 2.7, 2),
-(1.2, 4.2, 3), (1.2, 4.2, 7), (1.2, 4.2, 2),
-(1.2, 2.7, 3), (1.2, 2.7, 7), (1.2, 2.7, 2),
-(2.4, 4.2, 3), (2.4, 4.2, 7), (2.4, 4.2, 2),
-(2.4, 2.7, 3), (2.4, 2.7, 7), (2.4, 2.7, 2)	
-	*/
-
-	std::string result;
-	for (auto i : data[0])
-	{
-		for (auto j : data[1])
+    std::vector<double> tempo = data[index];
+    for (double i : tempo)
+    {       
+        buffer.push_back(i);
+        if (index == 0)
 		{
-			for (auto k : data[2])
-			{
-				result += "(" + better_to_string(i) + ", " + better_to_string(j) + ", " + better_to_string(k) + "), ";
-			}
+            total.push_back(buffer);
 		}
-	}
+		else
+        {
+		    recursive(total, buffer, data, index - 1);
+		}
+		buffer.pop_back();
+    }
+}
 
 
-
-	return result;
+std::vector<std::vector<double>> cartesean_product(std::vector<std::vector<double>> data)
+{
+    std::vector<std::vector<double>> total;
+    std::vector<double> buffer;
+    if (data.size())
+        recursive(total, buffer, data, data.size() - 1);
+    return total;
 }
 
 int main()
@@ -117,7 +117,27 @@ int main()
 	std::cout << std::endl << "The example output is wrong XDDDDD";
 
 	std::cout << std::endl << "<2.2>" << std::endl;
-	std::cout << cartesean_product(cleaned_data);
+	
+	std::vector<std::vector<double>> sequences;
+	for (auto i : cleaned_data)
+	{
+		sequences.push_back(i);
+	}
+	std::vector<std::vector<double>> result = cartesean_product(sequences);
+	for (auto i : result)
+	{
+		std ::cout << "(";
+		for (auto j : i)
+		{
+			std::cout << j ;
+			if (j != i.back())
+				std::cout << ", ";
+		}
+		std::cout << ")";
+		if (i != result.back())
+			std::cout << ", ";
+		//std::cout << std::endl;
+	}
 
 
 
