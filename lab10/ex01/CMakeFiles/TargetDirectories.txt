@@ -1,0 +1,8 @@
+/home/pix/oop/lab10/ex01/CMakeFiles/args.dir
+/home/pix/oop/lab10/ex01/CMakeFiles/calc.dir
+/home/pix/oop/lab10/ex01/CMakeFiles/calc_expr.dir
+/home/pix/oop/lab10/ex01/CMakeFiles/edit_cache.dir
+/home/pix/oop/lab10/ex01/CMakeFiles/rebuild_cache.dir
+/home/pix/oop/lab10/ex01/nse/CMakeFiles/nse_html.dir
+/home/pix/oop/lab10/ex01/nse/CMakeFiles/edit_cache.dir
+/home/pix/oop/lab10/ex01/nse/CMakeFiles/rebuild_cache.dir
